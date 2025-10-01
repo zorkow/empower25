@@ -1,6 +1,6 @@
 ***Head
 
-:::Icon logos/favicon.ico
+:::Icon Resources/logos/favicon.ico
 :::CSS node_modules/normalize.css/normalize.css minify
 :::CSS Resources/styles.css minify
 :::Script Resources/scripts/mathjax-conf.js minify
