@@ -51,13 +51,51 @@ Indian Instiute of Technology, Delhi
 
 ## What is SVG
 
-## SVG vs Bitmap
+## SVG in the context of the Web
+
+Distinct technologies addressing separate concerns/purposes.
+
+[Separation of Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns)
+on the Web:
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) for
+  structure
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) for
+  presentation/layout
+* JavaScript for interactivity/context adaptation
+* [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) for scalable vector
+  graphics
+* [WAI-ARIA](https://www.w3.org/TR/wai-aria/) for (human-oriented)
+  semantics/accessibility
+
+
+## Vector Graphics vs Bitmap
+
+*
+* JPEG, GIF, PNG, BMP, TIFF, ...
+
+## Vector Graphics Formats
+
+* General: SVG, PGF
+* Operating System Specific: WMF, EMF
+* Proprietary: CDR, AI
+* For printing: EPS, PDF
 
 ## Bitmap drawbacks
 
 ## SVG advantages
 
+## SVG components
+
 ## SVG drawbacks 
+
+* Recognition: needs to be drawn to recognise
+* For accessibility: 
+
+## SVG and Hardware
+
+Screens 
+
+## SVG Accessibility
 
 ## Old Stuff
 
