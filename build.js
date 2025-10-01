@@ -1,15 +1,20 @@
-const md = require('markdown-it')();
-md.use(require('markdown-it-attrs'), {
+import MarkdownIt from 'markdown-it';
+import markdownItAttrs from 'markdown-it-attrs';
+import markdownItHeaderSections from 'markdown-it-header-sections';
+import container from 'markdown-it-container';
+import fs from 'fs';
+import minify from 'minify';
+
+const md = new MarkdownIt();
+
+md.use(markdownItAttrs, {
   // optional, these are default options
   leftDelimiter: '{',
   rightDelimiter: '}',
   allowedAttributes: []  // empty array = all attributes are allowed
 });
 
-md.use(require('markdown-it-header-sections'));
-const container = require('markdown-it-container');
-const fs = require('fs');
-const minify = require('minify');
+md.use(markdownItHeaderSections);
 
 let ASYNC_COUNTER = 0;
 let STANDALONE = process.argv.indexOf('--standalone') !== -1;
