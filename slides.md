@@ -364,9 +364,9 @@ Nemeth is challenging to get right automatically, but sometimes automation is be
 
 ## Example: Aspirin Recognition
 
-![image](../../resources/aspirin/aspirin-full.jpg){width=600}
-![image](../../resources/aspirin/aspirin-skeletal.png){width=300}
-![image](../../resources/aspirin/aspirin-structural.jpg){width=300}
+![image](Resources/aspirin/aspirin-full.jpg){width=600}
+![image](Resources/aspirin/aspirin-skeletal.png){width=300}
+![image](Resources/aspirin/aspirin-structural.jpg){width=300}
 
 * Chemical diagrams come in many flavours
 * Basic idea for accessibility
