@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded", function() {
-  cacc.Base.init();
+  diagcess.Base.init();
 });

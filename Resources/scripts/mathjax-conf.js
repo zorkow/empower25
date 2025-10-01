@@ -5,13 +5,6 @@ MathJax = {
     sre: {
       locale: 'en'
     },
-    renderActions: {
-      assistiveMml: [],
-      setExplorerValues: [199,
-                          (doc) => {for (const math of doc.math) {MathJax.config.setExplorer(math, doc)}},
-                          (math, doc) => MathJax.config.setExplorer(math, doc)
-                         ]
-    }
   },
   currentMathFocus: null,
   setExplorer(math, doc) {

@@ -5,8 +5,8 @@
 :::CSS Resources/styles.css minify
 :::Script Resources/scripts/mathjax-conf.js minify
 :::Script https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js
-:::Script Resources/scripts/cacc.js
-:::Script Resources/scripts/cacc-conf.js minify
+:::Script Resources/scripts/diagcess.js
+:::Script Resources/scripts/diagcess-conf.js minify
 :::Script Resources/scripts/general-conf.js minify
 :::
 

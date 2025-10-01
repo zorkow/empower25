@@ -3,7 +3,7 @@ import markdownItAttrs from 'markdown-it-attrs';
 import markdownItHeaderSections from 'markdown-it-header-sections';
 import container from 'markdown-it-container';
 import fs from 'fs';
-import minify from 'minify';
+import {minify} from 'minify';
 
 const md = new MarkdownIt();
 
@@ -16,6 +16,7 @@ md.use(markdownItAttrs, {
 
 md.use(markdownItHeaderSections);
 
+let PROMISES = [];
 let ASYNC_COUNTER = 0;
 let STANDALONE = process.argv.indexOf('--standalone') !== -1;
 let DIRECT_LINKS = process.argv.indexOf('--links') !== -1;
@@ -178,18 +179,22 @@ md.use(container, 'Icon', {
 });
 
 
-let asyncJS = async function(stream, count) {
-  minify.js(stream).then((x) => {
+let asyncMinify = async function(stream, count, func) {
+  func(stream).then((x) => {
     HEAD_REPLACE[count] = x;
     ASYNC_COUNTER--;
   });
 };
 
 
-let minifyScript = function(stream) {
-  let count = 'HEAD' + ASYNC_COUNTER;
+let minifyScript = function(stream, func, type) {
+  let count = type + ASYNC_COUNTER;
   ASYNC_COUNTER++;
-  asyncJS(stream, count);
+  const promise = func(stream).then((x) => {
+    (type === 'HEAD' ? HEAD_REPLACE : BODY_REPLACE)[count] = x;
+    ASYNC_COUNTER--;
+  });
+  PROMISES.push(promise);
   return count;
 };
 
@@ -214,7 +219,7 @@ md.use(container, 'Script', {
     // This should throw an error if file is not available!
     let stream = fs.readFileSync(src, {encoding:'utf8'});
     if (elements[2] === 'minify') {
-      stream = minifyScript(stream);
+      stream = minifyScript(stream, minify.js, 'HEAD');
     }
     HEAD += ` <script type="text/javascript">${stream}</script>\n`;
     return '';
@@ -242,7 +247,7 @@ md.use(container, 'CSS', {
     // This should throw an error if file is not available!
     let stream = fs.readFileSync(src, {encoding:'utf8'});
     if (elements[2] === 'minify') {
-      stream = minify.css(stream);
+      stream = minifyScript(stream, minify.css, 'HEAD');
     }
     HEAD += ` <style type="text/css">${stream}</style>\n`;
     return '';
@@ -290,8 +295,8 @@ md.use(container, 'Diagcess', {
     xml = xml.replace(/<sre:[a-z]*\/>/g, '');
     xml = xml.replace(/sre:/g, '');
     if (elements[4] === 'minify') {
-      svg = minify.html(svg);
-      xml = minify.html(xml);
+      svg = minifyScript(svg, minify.html, 'BODY');
+      xml = minifyScript(xml, minify.html, 'BODY');
     }
     div += `<div class="svg">${svg}</div>`;
     div += `<div class="cml">${xml}</div>`;
@@ -420,28 +425,21 @@ let slideIds = function() {
 
 let replace = function() {
   for (let key of Object.keys(HEAD_REPLACE)) {
-    HEAD = HEAD.replace(key, HEAD_REPLACE[key]);
+    HEAD = HEAD.replace(key, HEAD_REPLACE[key].replace(/\$/g, '$$$$'));
   }
   for (let key of Object.keys(BODY_REPLACE)) {
-    SLIDES = SLIDES.replace(key, BODY_REPLACE[key]);
+    SLIDES = SLIDES.replace(key, BODY_REPLACE[key].replace(/\$/g, '$$$$'));
   }
   SLIDES = SLIDES.replace(/<a /g, '<a target="_blank" rel="noopener"');
   slideIds();
 };
 
-let finalizeOutput = function() {
-  if (ASYNC_COUNTER) {
-    debug('Finalize', true);
-    setTimeout(
-      finalizeOutput,
-      100
-    );
-    return;
-  }
-  replace();
-  debug('Finalize');
-  output();
+let finalizeOutput = async function() {
+  return Promise.all(PROMISES).then(() => {
+    replace();
+    debug('Finalize');
+    output();
+  });
 };
 
-
-finalizeOutput();
+await finalizeOutput();
