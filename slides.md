@@ -32,6 +32,7 @@ Progressive Accessiblity Solutions
 ![Progressive Access Logo](Resources/logos/logo2-small.png)
 [progacc.com](https://progressiveaccess.com)
 [v.sorge@progressiveaccess.com](mailto:v.sorge@progressiveaccess.com)
+[neha.jadhav@progressiveaccess.com](mailto:neha.jadhav@progressiveaccess.com)
 :::
 
 :::Affiliation
