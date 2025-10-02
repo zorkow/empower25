@@ -4,7 +4,7 @@
 :::CSS node_modules/normalize.css/normalize.css minify
 :::CSS Resources/styles.css minify
 :::Script Resources/scripts/mathjax-conf.js minify
-:::Script https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js
+:::Script https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-svg.js
 :::Script Resources/scripts/diagcess.js
 :::Script Resources/scripts/diagcess-conf.js minify
 :::Script Resources/scripts/general-conf.js minify
@@ -49,7 +49,9 @@ Indian Instiute of Technology, Delhi
 Everything we will do today is web based
 
 * Introduction to SVG
-* Why SVG for Accessibility
+* SVG for Accessibility
+* The challenge of STEM
+* SVG as a solution for many problems
 * Examples
 
 
@@ -74,12 +76,12 @@ on the Web:
 
 Where do "normal" images fit in?
 
+![image](Resources/images/Pixel_Array.png){width=600}{style="float:right"}
 * Most images are bitmap graphics
 * **Common formats are** – JPEG, GIF, PNG, BMP, TIFF, ...
 * Images can be displayed on the web
 * But not really "used" or manipulated
 
-![image](Resources/images/Pixel_Array.png){width=600}
 
 
 ## **Vector vs Bitmap Graphics**
@@ -122,6 +124,15 @@ Source: Wikipedia{.source}
 * Vectore Graphics is still poor on low resolution devices
 
 
+## **Common Vector Graphics Formats**
+
+* **Web formats**: SVG (Scalable Vector Graphics)
+* **General formats**: PGF (Portable Graphics Format)
+* **Printer specific formats**: EPS (Encapsulated PostScript), PDF (Portable Document Format)
+* **Proprietary formats**: AI (Adobe Illustrator Artwork), CDR (CorelDRAW)
+* **Operating system specific**: WMF (Windows Metafile) / EMF (Enhanced Metafile)
+* **Application specific**: DXF (Drawing Exchange Format), a CAD formats
+
 
 ## **Introduction to SVG**
 
@@ -156,74 +167,18 @@ SVG is an XML document with a set of tags for drawing:
 More advanced elements allow for sophisticated drawing
 
 * `<clipPath>`, `<mask>`
-
   * Useful for masking shapes or creating complex visibility effects.
   * Only parts of shapes are visible
-
 * `<pattern>`, `<filter>`
-
   * Fills a shape with a repeating graphic pattern.
   * Applies visual effects like blur, lighting, color manipulation, etc.
   * Can create complex visual styles (e.g., drop shadows, textures).
-
 * `<defs>`, `<symbol>`, `<use>`
-
   * Defines reusable elements and allowing multiple uses.
-
-
-* `<foreignObject>`
-
-  * Allows inclusion of HTML or other XML within SVG.
-
+* `<foreignObject>` – Allows inclusion of HTML or other XML within SVG.
 * `<animate>`, `<animateTransform>`, `<animateMotion>`
-
   * Used for declarative animations within SVG.
-
 * `<g>` – Groups SVG elements together
-
-## **Common Vector Graphics Formats**
-
-* **SVG (Scalable Vector Graphics)**
-
-  * XML-based; widely used on the web
-  * Supports interactivity, animation, and styling with CSS/JS
-  * Open standard by W3C
-
-* **PDF (Portable Document Format)**
-
-  * Supports both vector and raster graphics
-  * Common for print and document sharing
-  * Preserves layout and fonts across platforms
-
-* **EPS (Encapsulated PostScript)**
-
-  * Used mainly in professional print workflows
-  * Can include both vector and raster data
-  * Often used with Adobe Illustrator and similar tools
-
-* **AI (Adobe Illustrator Artwork)**
-
-  * Proprietary format used by Adobe Illustrator
-  * Supports layers, artboards, and vector shapes
-  * Not directly viewable without Adobe software or converters
-
-* **WMF (Windows Metafile) / EMF (Enhanced Metafile)**
-
-  * Developed by Microsoft for Windows applications
-  * Used for vector graphics in Office and Windows apps
-
-* **DXF (Drawing Exchange Format)**
-
-  * Created by Autodesk for CAD (Computer-Aided Design) data
-  * Used for exchanging drawings between CAD programs like AutoCAD
-
-
-## Vector Graphics Formats
-
-* General: SVG, PGF
-* Operating System Specific: WMF, EMF
-* Proprietary: CDR, AI
-* For printing: EPS, PDF
 
 ## **Advantages of SVG**
 
@@ -249,6 +204,9 @@ More advanced elements allow for sophisticated drawing
 * Image recognition does not work (well) directly from Vector
 * Conversion from vector to bitmap is easy, but not the other way around
 
+![semi circle](Resources/semicircle/semicircle.svg){width=600}
+
+
 ## SVG Issues with Accessibility
 
 * Colors and contrasts can not easily be determined
@@ -259,6 +217,9 @@ More advanced elements allow for sophisticated drawing
 * Same holds for tactile display devices
   * Often come without SVG driver
 * Advanced elements can be difficult to understand
+
+:::Diagcess semicircle Resources/semicircle/semicircle_animated.svg Resources/semicircle/semicircle_animated.xml
+:::
 
 ## SVG and Accessibility
 
@@ -295,13 +256,45 @@ More advanced elements allow for sophisticated drawing
 * Computes dark modes or color inversions automatically
 * Enables color locking and customisation
 
-## Navigation
 
-## Shadow DOM Style
+## STEM and SVG
+
+* How can we make STEM accessible using SVG
+
+## Why is STEM Difficult?
+
+Standard recommendations like WCAG fail for STEM content:
+
+* STEM brings together some of the hardest a11y problems
+  * Specialised vernacular, scripts, tables, formulas, diagrams
+  * Animations,  simulations, Interactive exercises
+* STEM are infinite languages
+  * meaning shifts, vernacular is added
+  * aimed at diverse audiences (pubils, students, scientists)
+  * difficult to understand (in particular automatically)
+  * precision is important (vague recognition is not enough)
+* Declarative approaches fail
+
+
+## Solutions to STEM
+
+* Historical solutions:
+  * Audio recordings, large print, Braille books
+  * Use of models, tactile prints, swell paper, etc. in class
+  * Exams: Specialist support needs to be provided, often one-on-one
+* Curent problems:
+  * Most content is in electronic form
+  * Anyone can prepare material, often on the fly
+  * LMS, independent work, online examinations
+  * Interaction, simulations, videos, ...
+
+## 
+
 
 
 ## Examples
 
+* Navigatable Formulas
 * Navigatable Diagrams
   * Mathematics
   * Chemistry
@@ -309,6 +302,76 @@ More advanced elements allow for sophisticated drawing
 * Accessible Data Visualisations: Highcharts
 * Animations and Simulations: Phet
 * Accessible drawing: PreFigure
+
+
+* The example uses MathJax for rendering
+* Open-source JavaScript library for rendering Mathematics in all browsers
+* Input: LaTeX, AsciiMath, and MathML
+* Output: SVG
+
+
+## Interactive Exploration
+
+* There are different ways to achieve this
+* Easiest is by adding tabbing structure to the SVG
+* Providing ARIA elements
+* Bespoke `data` attributes that can be exploited 
+
+## Example: Navigatable Formula
+
+Work with Davide Cervone{.source}
+
+$$
+   x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+$$
+
+:::Standalone Click or focus on the formula and press <kbd>ENTER</kbd> to start, <kbd>Escape</kbd> to quit.
+:::
+
+* Source in LaTeX
+* Rendered with MathJax
+* Output is SVG
+* Embedded semantics generated produces the speech output
+
+
+
+## Navigation
+
+* Interaction using an external navigation structure
+* Embedded as foreign element into the SVG
+* Navigation is then achieved by mapping navigation to drawn elements
+* Some JavaScript for navigation
+
+
+## Abstraction Graph{.notes}
+
+![image](Resources/images/aspirin-graph2.png){style="float:right"}
+
+*  Represent molecule as multi-layered graph
+*  3-4 layers of abstraction
+   *  Molecule
+   *  Block
+   *  Atom
+* Additional layer in case of fused ring systems
+* Navigation follows strict chemical (IUPAC) rules
+
+
+## Example: Chemical Diagrams
+
+:::Diagcess aspirin-multi Resources/molecules/aspirin-multi.svg Resources/molecules/aspirin-multi.xml minify
+:::
+
+:::Standalone Click or focus on the diagram and press <kbd>A</kbd> to start, <kbd>Up,Down,Left,Right</kbd> to explore, <kbd>Escape</kbd> to quit.
+:::
+
+* Simple navigation model with arrow keys
+* I18n support
+* SVG allows to embed plenty of semantic. Where do we get it from?
+
+
+## Shadow DOM Style
+
+This is then exemplified with Phet
 
 
 ## Accessible Data Visualisations: What is Highcharts?

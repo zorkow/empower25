@@ -1,0 +1,14 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="500"
+    height="500"
+    >
+  <defs>
+    <clipPath id="cut-off-bottom">
+      <rect x="0" y="0" width="500" height="250">
+      </rect>
+    </clipPath>
+  </defs>
+
+  <circle fill="red" cx="250" cy="250" r="200" stroke="red" clip-path="url(#cut-off-bottom)"/>
+</svg>
