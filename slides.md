@@ -24,8 +24,8 @@
 :::Affiliation
 University of Birmingham, UK
 ![University of Birmingham Crest](Resources/logos/crest-new.jpg)
-[cs.bham.ac.uk/~vxs](https://www.cs.bham.ac.uk/~vxs)
-[v.sorge@cs.bham.ac.uk](mailto:v.sorge@cs.bham.ac.uk)
+[birmingham.ac.uk/](https://www.birmingham.ac.uk/staff/profiles/computer-science/academic-staff/sorge-volker)
+[v.sorge@bham.ac.uk](mailto:v.sorge@bham.ac.uk)
 :::
 
 :::Affiliation
@@ -288,6 +288,17 @@ Wikipedia{.source}
 ## Shadow DOM Style
 
 
+## Examples
+
+* Navigatable Diagrams
+  * Mathematics
+  * Chemistry
+* Sonified Diagrams
+* Accessible Data Visualisations: Highcharts
+* Animations and Simulations: Phet
+* Accessible drawing: PreFigure
+
+
 ## Diagramming Language for VI Authors
 
 Work with David Austin{.source}
@@ -305,7 +316,7 @@ Small and descriptive XML vocabulary with well-defined functionality.
 
 ## Language Example
 
-``` xml
+```xml
 <graphics id="figure" width="300" height="300" margins="5">
   <boundingbox mbox="[-4,-4,4,4]"/>
   <grid-axes xlabel="x" ylabel="y" />
@@ -320,18 +331,6 @@ Small and descriptive XML vocabulary with well-defined functionality.
   </group>
 </graphics>
 ```
-
-
-## Examples
-
-* Navigatable Diagrams
-  * Mathematics
-  * Chemistry
-* Sonified Diagrams
-* Accessible Data Visualisations: Highcharts
-* Animations and Simulations: Phet
-* Accessible drawing: PreFigure
-
 
 
 ## Old Stuff
