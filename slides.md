@@ -336,7 +336,12 @@ More advanced elements allow for sophisticated drawing
 ![image](Resources/images/line-highchart.png){width=1800}
 
 ## Highcharts Line SVG
+
 [Highchart SVG Chart](https://www.highcharts.com/samples/nonav/highcharts/accessibility/accessible-line)
+
+[Highchart Pie Chart](https://www.highcharts.com/samples/nonav/highcharts/accessibility/accessible-pie)
+
+[Highchart Advanced POC](https://highcharts.github.io/highcharts-utils/samples/#gh/dc1050d7a9/sample/highcharts/studies/a11y-interactions)
 
 **Advantages**
 * Scalable/ no blur
@@ -345,6 +350,29 @@ More advanced elements allow for sophisticated drawing
 * Can explore every part of SVG
 * Comprehension at your pace
 
+## Animations and Simulations: What is PhET?
+
+* A free, research-based interactive simulation platform developed by the University of Colorado Boulder
+* Provides browser-based and downloadable simulations for science & math concepts
+* Covers topics from elementary level (addition, balance) to advanced (quantum physics, electricity)
+* Runs in HTML5/JavaScript – accessible on tablets, Chromebooks and desktop browsers
+
+## Traditional Teaching Methods & Their Challenges
+
+* Static textbook diagrams or chalkboard drawings
+* Step-by-step teacher demonstrations with no interactivity
+* PowerPoint animations that only “play” but cannot be manipulated
+
+**Why this is a problem:**
+
+* Passive learning — students watch but can’t experiment
+* Hard to show cause-and-effect relationships dynamically
+* Limited accessibility options (keyboard navigation, screen reader hints)
+* Not easily scalable or reusable across different classes/devices
+
+## Introducing PhET Interactive Simulations
+
+[PhET Interactive Simulations](https://phet.colorado.edu/sims/html/mean-share-and-balance/latest/mean-share-and-balance_all.html)
 
 ## Diagramming Language for VI Authors
 
