@@ -299,6 +299,41 @@ Wikipedia{.source}
 * Accessible drawing: PreFigure
 
 
+## Accessible Data Visualisations: What is Highcharts?
+* A popular JavaScript charting library for creating interactive charts
+* Supports many chart types: bar, line, pie, maps, heatmaps, etc
+* Generates charts as SVG (scalable, accessible) in the browser
+* Has a built-in Accessibility Module (adds ARIA, keyboard navigation, screen reader text)
+
+## Traditional Charts & Their Challenges
+* Static images (PNG/JPEG) pasted into reports or slides
+* Excel exports or screenshots
+* Canvas-based charts without semantic markup
+
+**Why this is a problem:**
+* Not scalable (blurry when zoomed, not responsive)
+* Screen readers can’t interpret them – just pixels
+* No keyboard navigation (mouse-only interaction)
+* No live updates for dynamic data
+* Limited alternative text beyond a single <img alt="…">
+
+## Introducing Highcharts
+
+**Bitmap first**
+
+![image](Resources/images/line-highchart.png){width=1800}
+
+## Highcharts Line SVG
+[Highchart SVG Chart](https://www.highcharts.com/samples/nonav/highcharts/accessibility/accessible-line)
+
+**Advantages**
+* Scalable/ no blur
+* Navigate one the same line along x-axis
+* Navigate along y-axis
+* Can explore every part of SVG
+* Comprehension at your pace
+
+
 ## Diagramming Language for VI Authors
 
 Work with David Austin{.source}
