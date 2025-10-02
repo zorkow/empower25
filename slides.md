@@ -113,7 +113,9 @@ Where do my images fit in?
 
 ## **Vector vs Bitmap Graphics (ctd)**
 
-![image](Resources/images/Bitmap_VS_SVG.svg){width=800}
+Wikipedia{.source}
+
+![image](Resources/images/Bitmap_VS_SVG.svg){width=900}
 
 
 ## Display and Output
