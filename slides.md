@@ -14,7 +14,8 @@
 
 ***TitleSlide
 
-:::Title SVG for Accessibility
+:::Title Empowering STEM Learning with SVG
+:::Subtitle  Accessible Visualizations for AllSVG for Accessibility
 :::
 :::Author Volker Sorge and Neha Jadhav
 :::
@@ -262,7 +263,7 @@ Where do my images fit in?
 
 * Colors and contrasts can not easily be determined
 * SVG needs to be drawn first to understand what is next to each other
-* Drawing on tactile devices is often poor 
+* Drawing on tactile devices is often poor
   * See the discussion on resolution
 
 
@@ -282,6 +283,40 @@ Where do my images fit in?
 ## Navigation
 
 ## Shadow DOM Style
+
+
+## Diagramming Language for VI Authors
+
+Work with David Austin{.source}
+
+Basic Aims:
+
+  * Do not forgo the power of TikZ etc.
+  * Ease authoring workflow for VI users: Draw, Generate, Inspect
+  * XML based for easy  PreTeXt integration
+  * Built-in accessibility
+  * Little free-hand drawing or placment of labels
+
+Small and descriptive XML vocabulary with well-defined functionality.
+
+
+## Language Example
+
+``` xml
+<graphics id="figure" width="300" height="300" margins="5">
+  <boundingbox mbox="[-4,-4,4,4]"/>
+  <grid-axes xlabel="x" ylabel="y" />
+
+  <variable name="a" value="1" />
+  <function expr="f(x) = exp(x/3)*cos(x)" />
+
+  <group id="graph-tangent">
+    <graph id="graph" function="f" stroke="blue" />
+    <tangent-line id="tangent" function="f" point="a" stroke="red" />
+    <point id="point" p="(a, f(a))" fill="red" text="(a, f(a))" />
+  </group>
+</graphics>
+```
 
 
 ## Examples
@@ -327,9 +362,9 @@ box
     * Operable: Keyboard, touch
     * Understandable: Language of a document
     * Robust: Not just for Browser X on OS Y
-    
 
-## Why is STEM Difficult? 
+
+## Why is STEM Difficult?
 
 Standard recommendations like WCAG fail for STEM content:
 
@@ -344,7 +379,7 @@ Standard recommendations like WCAG fail for STEM content:
 * Declarative approaches fail
 
 
-## Solutions to STEM 
+## Solutions to STEM
 
 * Historical solutions:
   * Audio recordings, large print, Braille books
@@ -380,7 +415,7 @@ on the Web:
 * Use the richness of the Web to make STEM accessible: HTML, CSS, SVG, ARIA...
 * Allow learners and practitioners not just to consume but to easily create
 * Work and comumincate in their prefered method
-  
+
 **My aim is NOT to**
 
 * restrict authors to a particular syntax/system/technique
@@ -399,7 +434,7 @@ Generate and embed automatically rich semantic content
 * Trying to capture this in an declarative standard is impossible
 * Human input: Authors? Remedial Officers?
 * Automatic
-    * Exploit available sources 
+    * Exploit available sources
     * Use intelligent methods to automatically interpret syntax
     * Avoid manual intervention as much as possible
 
@@ -529,7 +564,7 @@ Advantages:
 Nemeth is challenging to get right automatically, but sometimes automation is better:
 
 * Subtlety of spaces:
-   * $44\,352\,000$ is a single number and transcribes as ⠼⠲⠲⠒⠢⠆⠴⠴⠴ 
+   * $44\,352\,000$ is a single number and transcribes as ⠼⠲⠲⠒⠢⠆⠴⠴⠴
    * $(0110\,1110\,0110)$ is not a single number but a vector, hence ⠷⠼⠴⠂⠂⠴⠀⠼⠂⠂⠂⠴⠀⠼⠴⠂⠂⠴⠾
    * $(n, E) = (451{,}231)$ [The right hand side is not a single number](http://abstract.ups.edu/aata/crypt-exercises.html#grE) ⠷⠝⠠⠀⠠⠑⠾⠀⠨⠅⠀⠷⠲⠢⠂⠠⠀⠆⠒⠂⠾
 * Context helps
@@ -681,16 +716,16 @@ Nemeth is challenging to get right automatically, but sometimes automation is be
 
 Work with David Austin{.source}
 
-Basic Aims: 
-  
+Basic Aims:
+
   * Do not forgo the power of TikZ etc.
-  * Ease authoring workflow for VI users: Draw, Generate, Inspect 
+  * Ease authoring workflow for VI users: Draw, Generate, Inspect
   * XML based for easy  PreTeXt integration
   * Built-in accessibility
   * Little free-hand drawing or placment of labels
 
 Small and descriptive XML vocabulary with well-defined functionality.
-    
+
 
 ## Language Example
 
@@ -770,17 +805,17 @@ Project with PreTeXt, AIM and NFB.{.source}
   * [2D layout for complex formulas](https://speech-rule-engine.github.io/sre-tests/output/nemeth/Nemeth2D.html)
   * Tactile diagrams
 * Tactile output with
-  * Nemeth Braille 
+  * Nemeth Braille
   * Nemeth 2D Braille
   * Latex 8 dot Braille (with German institutions)
-  
+
 ## Generate Tactile Diagrams
 
 ![Diagram bad for embosser](Resources/alexei/diagram_best.jpg){width=700}
 {align="center"}
 
-  
-## The Holy Grail: Hassle-free Accessibility 
+
+## The Holy Grail: Hassle-free Accessibility
 
 Work with David Austin, Zainab Ali{.source}
 
