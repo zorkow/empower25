@@ -44,14 +44,14 @@ Indian Instiute of Technology, Delhi
 
 ## Overview
 
+Everything we will do today is web based
+
 * Introduction to SVG
 * Why SVG for Accessibility
 * Examples
 
 
-## What is SVG
-
-## SVG in the context of the Web
+## Overview of Web Components
 
 Distinct technologies addressing separate concerns/purposes.
 
@@ -61,17 +61,169 @@ on the Web:
   structure
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) for
   presentation/layout
-* JavaScript for interactivity/context adaptation
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) for interactivity/context adaptation
 * [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) for scalable vector
   graphics
 * [WAI-ARIA](https://www.w3.org/TR/wai-aria/) for (human-oriented)
   semantics/accessibility
 
 
-## Vector Graphics vs Bitmap
+## Bitmap Graphics
 
-*
-* JPEG, GIF, PNG, BMP, TIFF, ...
+Where do my images fit in?
+
+* Most images are bitmap graphics
+* **Common formats are** – JPEG, GIF, PNG, BMP, TIFF, ...
+
+![image](Resources/images/Pixel_Array.png){width=600}
+
+* Images can be displayed on the web
+* But not really used or manipulated
+
+## **Introduction to SVG**
+
+* **SVG (Scalable Vector Graphics)** is an XML-based format for describing 2D graphics.
+* Developed by the **W3C** to enable vector graphics on the web.
+* Graphics are described using **XML tags**, making them both human- and machine-readable.
+* SVG can be **embedded directly into HTML**, or linked as external files.
+* It supports drawing of **basic shapes**, **text**, and more advanced elements.
+* **Fully scalable** – maintains crisp quality at any size or resolution.
+* Can be styled with **CSS** and made interactive with **JavaScript**.
+* Supported by all major modern web browsers.
+
+
+## **Vector vs Bitmap Graphics**
+
+**Bitmap (Raster)**
+
+* Made up of pixels
+* Quality degrades when scaled up
+* Better for complex images like photographs
+
+**Vector (e.g., SVG)**
+
+* Based on XML and uses mathematical formulas to define shapes
+* Infinitely scalable without loss of quality
+* Ideal for logos, icons, illustrations, diagrams
+  * In other words: Everything drawn
+
+
+
+## **Vector vs Bitmap Graphics (ctd)**
+
+![image](Resources/images/Bitmap_VS_SVG.svg){width=800}
+
+
+## Display and Output
+
+* Bitmaps are ideal for many output devices
+  * Screens
+  * Printers
+  * ...
+* Drawing is more difficult
+  * Intermediate points need to be computed
+  * Anything that is not straight needs to be interpolated
+  * Good anti-aliasing important
+  * High resolution helps
+* Vectore Graphics is still poor on low resolution devices
+
+
+
+## **Elements of SVG**
+
+* `<svg>` – Root element that defines the SVG container
+* `<rect>` – Draws rectangles and squares
+* `<circle>` – Draws circles
+* `<ellipse>` – Draws ellipses (oval shapes)
+* `<line>` – Draws straight lines
+* `<polyline>` – Draws a connected series of lines
+* `<polygon>` – Draws a closed shape with multiple sides
+* `<path>` – Draws complex shapes using a series of commands
+* `<text>` – Renders text
+* `<g>` – Groups SVG elements together
+* Attributes: `fill`, `stroke`, `stroke-width`, `transform`, `x`, `y`, `width`, `height`, etc.
+
+
+## **Advanced SVG Elements**
+
+* **`<clipPath>`**
+
+  * Defines a clipping region – only the part of the element within the path is visible.
+  * Useful for masking shapes or creating complex visibility effects.
+  * Applied using the `clip-path` attribute.
+
+* **`<mask>`**
+
+  * Similar to `clipPath` but allows **transparency and gradients** for soft masking.
+  * Uses black, white, and gray to determine visibility levels.
+
+* **`<pattern>`**
+
+  * Fills a shape with a **repeating graphic** pattern.
+  * Can include any SVG content like shapes or images.
+
+* **`<defs>`**
+
+  * Container for **reusable elements** like gradients, patterns, clip paths, etc.
+  * Elements inside `<defs>` are not rendered directly but referenced elsewhere.
+
+* **`<symbol>` and `<use>`**
+
+  * `<symbol>` defines reusable graphics.
+  * `<use>` creates **instances** of symbols, saving space and allowing multiple uses.
+
+* **`<filter>`**
+
+  * Applies **visual effects** like blur, lighting, color manipulation, etc.
+  * Can create complex visual styles (e.g., drop shadows, textures).
+
+* **`<foreignObject>`**
+
+  * Allows inclusion of **HTML or other XML** within SVG.
+  * Enables things like embedding HTML-formatted text or CSS-based layouts.
+
+* **`<animate>`, `<animateTransform>`, `<animateMotion>`**
+
+  * Used for **declarative animations** within SVG.
+  * Can animate attributes like position, size, color, and transformations.
+
+
+## **Common Vector Graphics Formats**
+
+* **SVG (Scalable Vector Graphics)**
+
+  * XML-based; widely used on the web
+  * Supports interactivity, animation, and styling with CSS/JS
+  * Open standard by W3C
+
+* **PDF (Portable Document Format)**
+
+  * Supports both vector and raster graphics
+  * Common for print and document sharing
+  * Preserves layout and fonts across platforms
+
+* **EPS (Encapsulated PostScript)**
+
+  * Used mainly in professional print workflows
+  * Can include both vector and raster data
+  * Often used with Adobe Illustrator and similar tools
+
+* **AI (Adobe Illustrator Artwork)**
+
+  * Proprietary format used by Adobe Illustrator
+  * Supports layers, artboards, and vector shapes
+  * Not directly viewable without Adobe software or converters
+
+* **WMF (Windows Metafile) / EMF (Enhanced Metafile)**
+
+  * Developed by Microsoft for Windows applications
+  * Used for vector graphics in Office and Windows apps
+
+* **DXF (Drawing Exchange Format)**
+
+  * Created by Autodesk for CAD (Computer-Aided Design) data
+  * Used for exchanging drawings between CAD programs like AutoCAD
+
 
 ## Vector Graphics Formats
 
@@ -80,22 +232,69 @@ on the Web:
 * Proprietary: CDR, AI
 * For printing: EPS, PDF
 
-## Bitmap drawbacks
+## **Advantages of SVG**
 
-## SVG advantages
+* **Scalability** – No loss of quality at any resolution or zoom level
+* **Editability** – Easily editable with code or vector software
+* **Smaller File Sizes** – Often smaller than raster files for simple graphics
+* **Searchable and Indexable** – Text within SVG is selectable and searchable
+* **Interactive** – Supports animations, interactivity via CSS and JavaScript
+* **Resolution-independent** – Looks sharp on all devices including Retina displays
 
-## SVG components
 
-## SVG drawbacks 
+## **Drawbacks of SVG**
 
-* Recognition: needs to be drawn to recognise
-* For accessibility: 
+* **Complexity for Detailed Images** – Not efficient for photorealistic images
+* **Performance Issues** – Can be slower with very large or complex SVGs
+* **Browser Inconsistencies** – Some older browsers may not support all features
+* **Security Risks** – Inline SVGs can pose XSS risks if not sanitized
 
-## SVG and Hardware
+## Other SVG Issues
 
-Screens 
+**SVG and AI**
 
-## SVG Accessibility
+* Generative models are good a painting, but not drawing
+* There are some **Prompt to Vector** systems out there but none very good
+* Image recognition does not work (well) directly from Vector
+* Conversion from vector to bitmap is easy, but not the other way around
+
+**SVG and Accessibility**
+
+* Colors and contrasts can not easily be determined
+* SVG needs to be drawn first to understand what is next to each other
+* Drawing on tactile devices is often poor 
+  * See the discussion on resolution
+
+
+## SVG and Accessibility
+
+**The good parts**
+
+* **Lives in the Web**, so we have the full gamut of tools available:
+  * CSS, Aria, JavaScript etc.
+* **Embedding of information** is easy, via extra markup, different namespaces
+* **Grouping of elements** combines visual shapes to semantic groups
+* Can be made responsive, animated, etc.
+
+
+## Reactiveness
+
+## Navigation
+
+## Shadow DOM Style
+
+
+## Examples
+
+* Navigatable Diagrams
+  * Mathematics
+  * Chemistry
+* Sonified Diagrams
+* Accessible Data Visualisations: Highcharts
+* Animations and Simulations: Phet
+* Accessible drawing: PreFigure
+
+
 
 ## Old Stuff
 
