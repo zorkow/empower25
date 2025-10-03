@@ -301,6 +301,24 @@ Standard recommendations like WCAG fail for STEM content:
   * explain what's behind them
   * try to make it interactive
 
+## Techniques to Make SVG Accessible
+
+**Simple Techniques**
+
+* Using text instead of drawn characters
+* Providing tabindex structures to allow for tabbing through a graphic
+* Employ advanced ARIA navigation structures like `tree`, `grid`, etc.
+
+**Advanced Techniques**
+
+* Embedded additional semantics
+* Use structure plus Javascript
+* Examples:
+  * Exploration structures
+  * Hidden navigation trees
+  * Shadow DOM structures
+  * Sonification
+
 
 ## Examples
 
@@ -319,7 +337,7 @@ Standard recommendations like WCAG fail for STEM content:
 * There are different ways to achieve this
 * Easiest is by adding tabbing structure to the SVG
 * Providing ARIA elements
-* Bespoke `data` attributes that can be exploited 
+* Bespoke `data` attributes that can be exploited
 
 ## Example: Navigatable Formula
 
@@ -374,10 +392,82 @@ $$
 
 
 
+## Diagrams for Screenreading
 
-## Shadow DOM Style
+Generally embeddable into HTML, e.g., these slides
 
-This is then exemplified with Phet
+:::Diagcess unitcircle Resources/pretext/roots-of-unity-noscale.svg Resources/pretext/roots-of-unity-noscale.xml minify
+:::
+
+:::Standalone Click or focus on the diagram and press <kbd>A</kbd> to start, <kbd>Escape</kbd> to quit, <kbd>Escape</kbd> to quit.
+:::
+
+
+## Data and Charts{.notes}
+
+:::Diagcess mol2 Resources/graphics/Ozone.svg Resources/graphics/Ozone.xml minify
+:::
+
+:::Standalone Click or focus on the diagram and press <kbd>A</kbd> to start, arrows to navigate and <kbd>Escape</kbd> to quit.
+:::
+
+
+## PreTeXt: Bringing it All Together
+
+Work by Rob Beezer, David Farmer, et al{.source}
+
+[PreTeXt](https://pretextbook.org/) is a an uncomplicated XML vocabulary for
+open source textbooks, monographs, and research articles.
+
+**Aims to bring together the good parts of HTML/Word with LaTeX.**
+
+* Structure in XML
+* Mathematics in LaTeX
+* Graphics mainly in LaTeX
+* [Over 100 individual projects](https://pretextbook.org/catalog.html): Math, CS, engineering, music theory, ...
+
+
+## PreTeXt and Accessibility
+
+* One source, many outputs:
+  * print, PDF, web, EPUB, Jupyter Notebooks, ...
+* HTML output is accessible
+  * Mathematics is in LaTeX
+  * Rendered accessibly with [MathJax](https://www.mathjax.org) and [Speech Rule
+    Engine](https://speechruleengine.org)
+* Diagrams are harder, **but**{style="color:red"} they are usually declaratively implemented
+  * LaTeX packages like TikZ or xyPic
+  * with scripts or CAS like Sage
+
+Let's exploit that!
+
+## Tactile Mathematics
+
+Project with PreTeXt, AIM and NFB.{.source}
+
+* Automatic generation of tactile Textbooks
+  * PreTeXt books are translated automatically into Braille with
+  * Liblouis for the text, SRE for Nemeth
+  * [2D layout for complex formulas](https://speech-rule-engine.github.io/sre-tests/output/nemeth/Nemeth2D.html)
+  * Tactile diagrams
+* Tactile output with
+  * Nemeth Braille
+  * Nemeth 2D Braille
+  * Latex 8 dot Braille (with German institutions)
+
+## Generate Tactile Diagrams
+
+![Diagram bad for embosser](Resources/alexei/diagram_best.jpg){width=700}
+{align="center"}
+
+
+## The Holy Grail: Hassle-free Accessibility
+
+Work with David Austin, Zainab Ali{.source}
+
+[A recent research paper](https://githubraw.com/zorkow/pretext/w4a2023/w4a2023/frontmatter-1.html)
+
+
 
 
 ## Accessible Data Visualisations: What is Highcharts?
@@ -439,6 +529,20 @@ This is then exemplified with Phet
 * Limited accessibility options (keyboard navigation, screen reader hints)
 * Not easily scalable or reusable across different classes/devices
 
+
+## Shadow DOM Style
+
+Phet simulations use a Shadow DOM approach
+
+* Effectively a DOM that is idependent of the DOM that is displayed
+* Since a simulation is an entire page they effecively take over
+* Similiar to navigation structure
+* But with considerably more fine-grained
+  * interaction
+  * functional components
+  * custom events
+
+
 ## Introducing PhET Interactive Simulations
 
 [PhET Interactive Simulations](https://phet.colorado.edu/sims/html/mean-share-and-balance/latest/mean-share-and-balance_all.html)
@@ -463,7 +567,7 @@ This is then exemplified with Phet
 * Not navigable by keyboard or assistive tech
 * Collaboration limited to sighted participants
 
-## Circle 
+## Circle
 
 [https://davidaustinm.github.io/prefigure/](https://davidaustinm.github.io/prefigure/)
 
@@ -482,7 +586,7 @@ This is then exemplified with Phet
     </annotation>
   </annotations>
 </diagram>
-``` 
+```
 
 ## Line
 
@@ -533,5 +637,3 @@ Small and descriptive XML vocabulary with well-defined functionality.
   </group>
 </graphics>
 ```
-
-
