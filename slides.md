@@ -409,14 +409,8 @@ $$
 * However, Math diagrams in general are
     * Very subject specific
     * Didactic and Author driven
-
-## Example: A Graph
-
-:::Diagcess ozone Resources/prefigure/network.svg Resources/prefigure/network.xml minify
-:::
-
-:::Standalone Click or focus on the diagram and press <kbd>A</kbd> to start, arrows to navigate and <kbd>Escape</kbd> to quit.
-:::
+* Example: A [Network Graph](./diagcess.html?mole=./Resources/prefigure/network)
+* Sonification: An [xy graph](./diagcess.html?mole=./Resources/prefigure/network)
 
 
 ## PreTeXt: Accessible Authoring Including Diagrams
@@ -434,15 +428,6 @@ open source textbooks, monographs, and research articles.
 * One source, many outputs:
   * print, PDF, web, EPUB, Jupyter Notebooks, ...
 * HTML output is fully accessible
-
-## Example: Math Diagram
-
-:::Diagcess ozone Resources/prefigure/tangent.svg Resources/prefigure/tangent.xml minify
-:::
-
-:::Standalone Click or focus on the diagram and press <kbd>A</kbd> to start, arrows to navigate and <kbd>Escape</kbd> to quit.
-:::
-
 
 ## Bringing is all together: Hassle-free Accessibility
 
