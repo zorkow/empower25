@@ -16,8 +16,6 @@ Empower 25 Workshop on SVG and Accessibility
 * [A recent research paper](https://githubraw.com/zorkow/pretext/w4a2023/w4a2023/frontmatter-1.html)
 
 
-
-
 ### Highcharts Line SVG
 
 [Highchart SVG Chart](https://www.highcharts.com/samples/nonav/highcharts/accessibility/accessible-line)
