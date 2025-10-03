@@ -205,6 +205,7 @@ More advanced elements allow for sophisticated drawing
 * Conversion from vector to bitmap is easy, but not the other way around
 
 ![semi circle](Resources/semicircle/semicircle.svg){width=600}
+{align="center"}
 
 
 ## SVG Issues with Accessibility
@@ -391,28 +392,34 @@ $$
 * SVG allows to embed plenty of semantic, including different languages
 
 
+## Example: Data and Charts
 
-## Diagrams for Screenreading
-
-Generally embeddable into HTML, e.g., these slides
-
-:::Diagcess unitcircle Resources/pretext/roots-of-unity-noscale.svg Resources/pretext/roots-of-unity-noscale.xml minify
-:::
-
-:::Standalone Click or focus on the diagram and press <kbd>A</kbd> to start, <kbd>Escape</kbd> to quit, <kbd>Escape</kbd> to quit.
-:::
-
-
-## Data and Charts{.notes}
-
-:::Diagcess mol2 Resources/graphics/Ozone.svg Resources/graphics/Ozone.xml minify
+:::Diagcess ozone Resources/graphics/Ozone.svg Resources/graphics/Ozone.xml minify
 :::
 
 :::Standalone Click or focus on the diagram and press <kbd>A</kbd> to start, arrows to navigate and <kbd>Escape</kbd> to quit.
 :::
 
 
-## PreTeXt: Bringing it All Together
+## Mathematical Diagrams
+
+* Can be made accessible in a similar fashion
+* But they are less well defined
+* Consequently most work has been done on xy-graphs
+* However, Math diagrams in general are
+    * Very subject specific
+    * Didactic and Author driven
+
+## Example: A Graph
+
+:::Diagcess ozone Resources/prefigure/network.svg Resources/prefigure/network.xml minify
+:::
+
+:::Standalone Click or focus on the diagram and press <kbd>A</kbd> to start, arrows to navigate and <kbd>Escape</kbd> to quit.
+:::
+
+
+## PreTeXt: Accessible Authoring Including Diagrams
 
 Work by Rob Beezer, David Farmer, et al{.source}
 
@@ -423,23 +430,26 @@ open source textbooks, monographs, and research articles.
 
 * Structure in XML
 * Mathematics in LaTeX
-* Graphics mainly in LaTeX
-* [Over 100 individual projects](https://pretextbook.org/catalog.html): Math, CS, engineering, music theory, ...
-
-
-## PreTeXt and Accessibility
-
+* Graphics mainly in LaTeX or Prefigure
 * One source, many outputs:
   * print, PDF, web, EPUB, Jupyter Notebooks, ...
-* HTML output is accessible
-  * Mathematics is in LaTeX
-  * Rendered accessibly with [MathJax](https://www.mathjax.org) and [Speech Rule
-    Engine](https://speechruleengine.org)
-* Diagrams are harder, **but**{style="color:red"} they are usually declaratively implemented
-  * LaTeX packages like TikZ or xyPic
-  * with scripts or CAS like Sage
+* HTML output is fully accessible
 
-Let's exploit that!
+## Example: Math Diagram
+
+:::Diagcess ozone Resources/prefigure/tangent.svg Resources/prefigure/tangent.xml minify
+:::
+
+:::Standalone Click or focus on the diagram and press <kbd>A</kbd> to start, arrows to navigate and <kbd>Escape</kbd> to quit.
+:::
+
+
+## Bringing is all together: Hassle-free Accessibility
+
+Work with David Austin, Zainab Ali{.source}
+
+[A recent research paper](https://githubraw.com/zorkow/pretext/w4a2023/w4a2023/frontmatter-1.html)
+
 
 ## Tactile Mathematics
 
@@ -459,14 +469,6 @@ Project with PreTeXt, AIM and NFB.{.source}
 
 ![Diagram bad for embosser](Resources/alexei/diagram_best.jpg){width=700}
 {align="center"}
-
-
-## The Holy Grail: Hassle-free Accessibility
-
-Work with David Austin, Zainab Ali{.source}
-
-[A recent research paper](https://githubraw.com/zorkow/pretext/w4a2023/w4a2023/frontmatter-1.html)
-
 
 
 
@@ -538,8 +540,8 @@ Phet simulations use a Shadow DOM approach
 * Since a simulation is an entire page they effecively take over
 * Similiar to navigation structure
 * But with considerably more fine-grained
-  * interaction
-  * functional components
+  * localised interaction
+  * multiple functional components
   * custom events
 
 
