@@ -6,6 +6,14 @@
   <defs>
     <clipPath id="cut-off-bottom">
       <rect id="rect1" x="0" y="250" width="500" height="500" stroke-width="2" stroke="black">
+    <animate id="op"
+      attributeName="y" 
+      from="250" 
+      to="0"
+      dur="3s"
+      begin="3s; rect.end + 2s"
+      repeatCount="indefinite" 
+      freeze="remove"/>
       </rect>
     </clipPath>
   </defs>
