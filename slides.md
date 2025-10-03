@@ -168,16 +168,13 @@ More advanced elements allow for sophisticated drawing
 
 * `<clipPath>`, `<mask>`
   * Useful for masking shapes or creating complex visibility effects.
-  * Only parts of shapes are visible
 * `<pattern>`, `<filter>`
   * Fills a shape with a repeating graphic pattern.
   * Applies visual effects like blur, lighting, color manipulation, etc.
-  * Can create complex visual styles (e.g., drop shadows, textures).
 * `<defs>`, `<symbol>`, `<use>`
   * Defines reusable elements and allowing multiple uses.
 * `<foreignObject>` – Allows inclusion of HTML or other XML within SVG.
-* `<animate>`, `<animateTransform>`, `<animateMotion>`
-  * Used for declarative animations within SVG.
+* `<animate>`, `<animateTransform>`, `<animateMotion>` – Declarative animations.
 * `<g>` – Groups SVG elements together
 
 ## **Advantages of SVG**
@@ -204,7 +201,7 @@ More advanced elements allow for sophisticated drawing
 * Image recognition does not work (well) directly from Vector
 * Conversion from vector to bitmap is easy, but not the other way around
 
-![semi circle](Resources/semicircle/semicircle.svg){width=600}
+![semi circle](Resources/semicircle/semicircle.svg){width=300}
 {align="center"}
 
 
@@ -218,6 +215,8 @@ More advanced elements allow for sophisticated drawing
 * Same holds for tactile display devices
   * Often come without SVG driver
 * Advanced elements can be difficult to understand
+
+## SVG Issues with Accessibility
 
 :::Diagcess semicircle Resources/semicircle/semicircle_an2.svg Resources/semicircle/semicircle_an2.xml
 :::
@@ -309,6 +308,8 @@ Standard recommendations like WCAG fail for STEM content:
 * Using text instead of drawn characters
 * Providing tabindex structures to allow for tabbing through a graphic
 * Employ advanced ARIA navigation structures like `tree`, `grid`, etc.
+
+## Techniques to Make SVG Accessible
 
 **Advanced Techniques**
 
@@ -413,14 +414,12 @@ $$
 * Sonification: An [xy graph](./diagcess.html?mole=./Resources/prefigure/network)
 
 
-## PreTeXt: Accessible Authoring Including Diagrams
+## Accessible Authoring with Diagrams
 
 Work by Rob Beezer, David Farmer, et al{.source}
 
 [PreTeXt](https://pretextbook.org/) is a an uncomplicated XML vocabulary for
 open source textbooks, monographs, and research articles.
-
-**Aims to bring together the good parts of HTML/Word with LaTeX.**
 
 * Structure in XML
 * Mathematics in LaTeX
@@ -429,7 +428,7 @@ open source textbooks, monographs, and research articles.
   * print, PDF, web, EPUB, Jupyter Notebooks, ...
 * HTML output is fully accessible
 
-## Bringing is all together: Hassle-free Accessibility
+## Bringing is all together Hassle-free
 
 Work with David Austin, Zainab Ali{.source}
 
