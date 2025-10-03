@@ -374,6 +374,64 @@ More advanced elements allow for sophisticated drawing
 
 [PhET Interactive Simulations](https://phet.colorado.edu/sims/html/mean-share-and-balance/latest/mean-share-and-balance_all.html)
 
+## Accessible Drawing: What is Prefigure?
+
+* A web-based tool for creating and sharing diagrams and drawings
+* Supports semantic annotation of shapes (level-wise)
+* Outputs clean SVG or MathML so diagrams are machine-readable
+* Study observations
+
+## Traditional Drawing Tools & Their Challenges
+
+* Paper sketches or whiteboards — non-digital, non-shareable
+* Graphic software (Illustrator, PowerPoint shapes) — not semantic, export to raster images
+* Canvas-based drawing apps — inaccessible to screen readers
+
+**Why this is a problem:**
+
+* People with visual impairments can’t perceive or interact with diagrams
+* No alternative text or structural information embedded in images
+* Not navigable by keyboard or assistive tech
+* Collaboration limited to sighted participants
+
+## Circle 
+
+[https://davidaustinm.github.io/prefigure/](https://davidaustinm.github.io/prefigure/)
+
+```xml
+<diagram dimensions="(300,300)" margins="5">
+  <coordinates bbox="(-5,-5,5,5)">
+    <grid/>
+    <rectangle at="square" center="(0,0)" dimensions="(4,4)"
+               stroke="red" thickness="3" fill="yellow"/>
+  </coordinates>
+  <annotations>
+    <annotation ref="figure"
+                text="This diagram shows a grid with a single square centered at the origin">
+      <annotation ref="square"
+                  text="A square of side length 4 units, drawn with red border and yellow fill"/>
+    </annotation>
+  </annotations>
+</diagram>
+``` 
+
+## Line
+
+```xml
+<diagram dimensions="(250,250)" margins="5">
+  <coordinates bbox="(-1,-1,1,1)">
+    <circle at="circle" center="(0,0)" radius="1" stroke="blue"/>
+  </coordinates>
+  <annotations>
+    <annotation ref="figure"
+                text="This diagram shows a circle, centered at the origin">
+      <annotation ref="circle"
+                  text="The circle"/>
+    </annotation>
+  </annotations>
+</diagram>
+```
+
 ## Diagramming Language for VI Authors
 
 Work with David Austin{.source}
